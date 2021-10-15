@@ -1,12 +1,10 @@
-import ProfileFunction from "./Profile/ProfileFunction";
-import ProfileClass from "./Profile/ProfileClass";
+import AuthorizationForm from "./AuthorizationForm/AuthorizationForm";
 
 function App() {
   return (
-   <>
-     <ProfileClass name="Вася Пупкин" registredAt={new Date(2021, 6, 22)} />
-     <ProfileFunction name="Вася Пупкин" registredAt={new Date(2021, 6, 22)} />
-   </>
+    <>
+      <AuthorizationForm />
+    </>
   );
 }
 
