@@ -1,5 +1,5 @@
 
-const Phrase = ({phrases}) => {
+const Phrases = ({phrases}) => {
   const renderPhrase = phrases.map((phrase, idx) => {
     return (
       <div key={idx} className="block"><h3>{phrase}</h3></div>
@@ -13,4 +13,4 @@ const Phrase = ({phrases}) => {
   );
 }
 
-export default Phrase
+export default Phrases

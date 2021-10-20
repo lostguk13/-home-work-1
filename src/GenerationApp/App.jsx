@@ -4,22 +4,21 @@ import './App.css';
 import { nounsArr, adjectivesArr } from './data.js'
 
 import EmptyBlock from './components/EmptyBlock'
-import Phrase from './components/Phrase'
+import Phrase from './components/Phrases'
 
 
 
 const App = () => {
-  const [arrPhrase, setArrPhase] = useState(['звериный зеленый олень'])
+  const [arrPhrase, setArrPhase] = useState([])
 
   const renderContent = arrPhrase.length > 0 ? <Phrase phrases={arrPhrase} /> : <EmptyBlock />
 
-  const generatePrases = () => {
-    const randomNounsArr = nounsArr[Math.floor(Math.random() * nounsArr.length)]
-    const randomAdjectivesArr = adjectivesArr[Math.floor(Math.random() * adjectivesArr.length)]
-    setArrPhase(arrPhrase => [...arrPhrase, `${randomAdjectivesArr} ${randomNounsArr}`])
+  const randomWord = (wordsArr) => {
+    return wordsArr[Math.floor(Math.random() * wordsArr.length)]
   }
-
-
+  const generatePrases = () => {
+    setArrPhase(arrPhrase => [...arrPhrase, `${randomWord(adjectivesArr)} ${randomWord(adjectivesArr)} ${randomWord(nounsArr)}`])
+  }
 
   return (
     <div className="wrapper">
