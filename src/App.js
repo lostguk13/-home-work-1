@@ -1,9 +1,8 @@
-import AuthorizationForm from "./AuthorizationForm/AuthorizationForm";
-
+import FeedBack from "./tutorial-5";
 function App() {
   return (
     <>
-      <AuthorizationForm />
+      <FeedBack />
     </>
   );
 }
