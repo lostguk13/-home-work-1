@@ -5,15 +5,16 @@ import Typography from '@mui/material/Typography';
 
 import useStyles from "./style";
 
-const defaultValues = {
-  fullName: "",
-  email: "",
-  createdAt: "",
-  text: ""
-};
-
 const FeedBackForm = ({ addNewComment }) => {
+
   const classes = useStyles();
+
+  const defaultValues = {
+    fullName: "",
+    email: "",
+    createdAt: "",
+    text: ""
+  }
 
   const [formValues, setFormValues] = useState(defaultValues);
   const [isSumit, setIsSubmit] = useState(false);
@@ -32,28 +33,22 @@ const FeedBackForm = ({ addNewComment }) => {
       setIsSubmit(false)
       setFormValues(defaultValues)
     }
-
   }, [formValues.createdAt])
 
   const handleSubmit = (event) => {
     event.preventDefault();
     let valid = true
-    if (formValues.fullName.length === 0) {
-      alert("Заполните имя!")
+    if (formValues.fullName.length === 0
+      && formValues.email.length === 0
+      && formValues.text.length === 0) {
+      alert("Заполните поля!")
       valid = false
-    } else if (formValues.email.length === 0) {
-      valid = false
-      alert("Заполните  почту!")
-    } else if (formValues.text.length === 0) {
-      valid = false
-      alert("Оставьте отзыв!")
     }
     if (valid) {
       setFormValues(prev => ({
         ...prev,
         'createdAt': new Date().toLocaleString(),
       }));
-
       setIsSubmit(true)
     }
   }
