@@ -38,10 +38,14 @@ const FeedBackForm = ({ addNewComment }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     let valid = true
-    if (formValues.fullName.length === 0
-      && formValues.email.length === 0
-      && formValues.text.length === 0) {
-      alert("Заполните поля!")
+    if (formValues.fullName.length === 0) {
+      alert("Заполните імя!")
+    }
+    else if (formValues.email.length === 0) {
+      alert("Заполните потчу!")
+    }
+    else if (formValues.text.length === 0) {
+      alert("Заполните текст отзыва!")
       valid = false
     }
     if (valid) {
